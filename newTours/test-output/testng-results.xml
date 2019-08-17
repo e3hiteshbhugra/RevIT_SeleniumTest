@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-08-10T13:25:23Z" name="Default suite" finished-at="2019-08-10T13:26:50Z" duration-ms="87668">
+  <suite started-at="2019-08-17T06:44:21Z" name="Default suite" finished-at="2019-08-17T06:46:15Z" duration-ms="113322">
     <groups>
     </groups>
-    <test started-at="2019-08-10T13:25:23Z" name="Default test" finished-at="2019-08-10T13:26:50Z" duration-ms="87668">
-      <class name="mercury.newTours.AppTest">
-        <test-method is-config="true" signature="configureBrowser()[pri:0, instance:mercury.newTours.AppTest@5b94b04d]" started-at="2019-08-10T13:25:23Z" name="configureBrowser" finished-at="2019-08-10T13:25:45Z" duration-ms="22261" status="PASS">
+    <test started-at="2019-08-17T06:44:21Z" name="Default test" finished-at="2019-08-17T06:46:15Z" duration-ms="113322">
+      <class name="mercury.newTours.ReportFlightBooking">
+        <test-method is-config="true" signature="configureBrowser()[pri:0, instance:mercury.newTours.ReportFlightBooking@5c90e579]" started-at="2019-08-17T06:44:21Z" name="configureBrowser" finished-at="2019-08-17T06:45:17Z" duration-ms="55686" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureBrowser -->
-        <test-method signature="bookFlightTest()[pri:0, instance:mercury.newTours.AppTest@5b94b04d]" started-at="2019-08-10T13:25:45Z" name="bookFlightTest" finished-at="2019-08-10T13:26:50Z" duration-ms="65082" status="PASS">
+        <test-method signature="bookFlightTest()[pri:0, instance:mercury.newTours.ReportFlightBooking@5c90e579]" started-at="2019-08-17T06:45:17Z" name="bookFlightTest" finished-at="2019-08-17T06:46:00Z" duration-ms="42424" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bookFlightTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:mercury.newTours.AppTest@5b94b04d]" started-at="2019-08-10T13:26:50Z" name="closeBrowser" finished-at="2019-08-10T13:26:50Z" duration-ms="192" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:mercury.newTours.ReportFlightBooking@5c90e579]" started-at="2019-08-17T06:46:00Z" name="closeBrowser" finished-at="2019-08-17T06:46:15Z" duration-ms="14903" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- mercury.newTours.AppTest -->
+      </class> <!-- mercury.newTours.ReportFlightBooking -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [NewTours]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="listeners.TestNGListeners"/>
+  </listeners>
+  <test thread-count="3" parallel="tests" name="BookFlightOnFirefox(failed)">
+    <parameter name="browserName" value=""/>
+    <classes>
+      <class name="mercury.newTours.ReportFlightBooking">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="bookFlightTest"/>
+          <include name="configureBrowser"/>
+        </methods>
+      </class> <!-- mercury.newTours.ReportFlightBooking -->
+    </classes>
+  </test> <!-- BookFlightOnFirefox(failed) -->
+</suite> <!-- Failed suite [NewTours] -->

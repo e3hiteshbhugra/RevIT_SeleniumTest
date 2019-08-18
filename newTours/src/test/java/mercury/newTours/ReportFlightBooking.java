@@ -1,20 +1,17 @@
 package mercury.newTours;
 
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.BookAFlight;
 import pages.FlightConfirmation;
 import pages.FlightFinder;
@@ -23,8 +20,11 @@ import pages.SelectFlight;
 
 public class ReportFlightBooking {
 
+	String path = System.getProperty("user.dir");
 	private static WebDriver driver;
-	private static String path = System.getProperty("user.dir");
+	private static ExtentHtmlReporter htmlReporter;
+	private static ExtentReports extent;
+	private static ExtentTest bookFlightTest;
 	private static String userName = "mercury";
 	private static String password = "mercury";
 	private static String fromPort = "Sydney";
@@ -40,17 +40,21 @@ public class ReportFlightBooking {
 	private static String expectedFlightInfoText = fromPort + " to " + toPort;
 	private static String expectedFlightConfirmationText = "Flight Confirmation";
 	
-	ExtentHtmlReporter htmlReporter;
-	ExtentReports extent;
-	ExtentTest bookFlightTest;
-
+	@Parameters("browserName")
 	@BeforeClass
-	public void configureBrowser () {
+	public void configureBrowser (String browserName) {
 		htmlReporter = new ExtentHtmlReporter("bookFlightReport.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		
-		WebDriverManager.chromedriver().setup();
+		if(browserName.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", path + ".\\assets\\chromedriver.exe");
+			driver = new ChromeDriver();
+		}
+		else {
+			System.setProperty("webdriver.gecko.driver", path + ".\\assets\\geckodriver.exe");
+			driver = new FirefoxDriver();
+		}
 	}
 	
 	@Test

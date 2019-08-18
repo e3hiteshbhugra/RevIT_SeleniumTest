@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="NewTours">
-  <test thread-count="5" name="BookFlight">
-    <classes>
-      <class name="mercury.newTours.AppTest"/>
-    </classes>
-  </test> <!-- BookFlight -->
+<suite name="NewTours" parallel="tests" thread-count="3">
+	<listeners>
+		<listener class-name="listeners.TestNGListeners"></listener>
+	</listeners>
+	<test name="BookFlightOnChrome">
+		<parameter name="browserName" value="chrome"></parameter>
+		<classes>
+			<class name="mercury.newTours.ReportFlightBooking"></class>
+		</classes>
+	</test> <!-- BookFlight -->
+	<test name="BookFlightOnFirefox">
+		<parameter name="browserName" value=""></parameter>
+		<classes>
+			<class name="mercury.newTours.ReportFlightBooking"></class>
+		</classes>
+	</test> <!-- BookFlight -->
 </suite> <!-- NewTours -->
